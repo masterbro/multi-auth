@@ -73,7 +73,7 @@ class MultiAuthInstallCommand extends InstallAndReplaceCommand
                 ]);
 
                 $this->installMigration();
-                $this->installPasswordResetMigration();
+                //$this->installPasswordResetMigration();
             }
 
             if(!$this->option('views')) {
@@ -181,34 +181,6 @@ class MultiAuthInstallCommand extends InstallAndReplaceCommand
         return true;
     }
 
-    /**
-     * Install PasswordResetMigration.
-     *
-     * @return bool
-     */
-    public function installPasswordResetMigration()
-    {
-        $name = $this->getParsedNameInput();
-
-        $migrationDir = base_path() . '/database/migrations/';
-        $migrationName = 'create_' . str_singular(snake_case($name)) .'_password_resets_table.php';
-        $migrationStub = new SplFileInfo(__DIR__ . '/../stubs/Model/PasswordResetMigration.stub');
-
-        $files = $this->files->allFiles($migrationDir);
-
-        foreach ($files as $file) {
-            if(str_contains($file->getFilename(), $migrationName)) {
-                $this->putFile($file->getPathname(), $migrationStub);
-
-                return true;
-            }
-        }
-
-        $path = $migrationDir . date('Y_m_d_His', strtotime('+1 second')) . '_' . $migrationName;
-        $this->putFile($path, $migrationStub);
-
-        return true;
-    }
 
     /**
      * Get the console command options.

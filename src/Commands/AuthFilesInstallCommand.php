@@ -72,15 +72,6 @@ class AuthFilesInstallCommand extends InstallFilesCommand
             'login_controller' => [
                 'stub' => __DIR__ . '/../stubs/DomainControllers/LoginController.stub'
             ],
-            'register_controller' => [
-                'stub' => __DIR__ . '/../stubs/DomainControllers/RegisterController.stub'
-            ],
-            'reset_password_controller' => [
-                'stub' => __DIR__ . '/../stubs/DomainControllers/ResetPasswordController.stub'
-            ],
-            'reset_password_notification' => [
-                'stub' => __DIR__ . '/../stubs/DomainNotifications/ResetPassword.stub'
-            ]
         ];
     }
 
@@ -110,22 +101,6 @@ class AuthFilesInstallCommand extends InstallFilesCommand
                 'path' => '/app/Http/Controllers/' . ucfirst($name) . 'Auth/' . 'LoginController.php',
                 'stub' => __DIR__ . '/../stubs/Controllers/LoginController.stub',
             ],
-            'register_controller' => [
-                'path' => '/app/Http/Controllers/' . ucfirst($name) . 'Auth/' . 'RegisterController.php',
-                'stub' => __DIR__ . '/../stubs/Controllers/RegisterController.stub',
-            ],
-            'forgot_password_controller' => [
-                'path' => '/app/Http/Controllers/' . ucfirst($name) . 'Auth/' . 'ForgotPasswordController.php',
-                'stub' => __DIR__ . '/../stubs/Controllers/ForgotPasswordController.stub',
-            ],
-            'reset_password_controller' => [
-                'path' => '/app/Http/Controllers/' . ucfirst($name) . 'Auth/' . 'ResetPasswordController.php',
-                'stub' => __DIR__ . '/../stubs/Controllers/ResetPasswordController.stub',
-            ],
-            'reset_password_notification' => [
-                'path' => '/app/Notifications/' . ucfirst($name) .'ResetPassword.php',
-                'stub' => __DIR__ . '/../stubs/Notifications/ResetPassword.stub',
-            ],
         ];
     }
 
@@ -145,18 +120,6 @@ class AuthFilesInstallCommand extends InstallFilesCommand
             ],
             'login_controller' => [
                 'stub' => __DIR__ . '/../stubs/Lucid/DomainControllers/LoginController.stub',
-            ],
-            'register_controller' => [
-                'stub' => __DIR__ . '/../stubs/Lucid/DomainControllers/RegisterController.stub',
-            ],
-            'forgot_password_controller' => [
-                'stub' => __DIR__ . '/../stubs/Lucid/DomainControllers/ForgotPasswordController.stub',
-            ],
-            'reset_password_controller' => [
-                'stub' => __DIR__ . '/../stubs/Lucid/DomainControllers/ResetPasswordController.stub',
-            ],
-            'reset_password_notification' => [
-                'stub' => __DIR__ . '/../stubs/Lucid/DomainNotifications/ResetPassword.stub',
             ],
         ];
     }
@@ -187,22 +150,6 @@ class AuthFilesInstallCommand extends InstallFilesCommand
             'login_controller' => [
                 'path' => '/src/Services/' . studly_case($service) . '/Http/Controllers/' . ucfirst($name) . 'Auth/LoginController.php',
                 'stub' => __DIR__ . '/../stubs/Lucid/Controllers/LoginController.stub',
-            ],
-            'register_controller' => [
-                'path' => '/src/Services/' . studly_case($service) . '/Http/Controllers/' . ucfirst($name) . 'Auth/RegisterController.php',
-                'stub' => __DIR__ . '/../stubs/Lucid/Controllers/RegisterController.stub',
-            ],
-            'forgot_password_controller' => [
-                'path' => '/src/Services/' . studly_case($service) . '/Http/Controllers/' . ucfirst($name) . 'Auth/ForgotPasswordController.php',
-                'stub' => __DIR__ . '/../stubs/Lucid/Controllers/ForgotPasswordController.stub',
-            ],
-            'reset_password_controller' => [
-                'path' => '/src/Services/' . studly_case($service) . '/Http/Controllers/' . ucfirst($name) . 'Auth/ResetPasswordController.php',
-                'stub' => __DIR__ . '/../stubs/Lucid/Controllers/ResetPasswordController.stub',
-            ],
-            'reset_password_notification' => [
-                'path' => '/src/Domains/Notifications/' . ucfirst($name) . 'ResetPassword.php',
-                'stub' => __DIR__ . '/../stubs/Lucid/Notifications/ResetPassword.stub',
             ],
         ];
 

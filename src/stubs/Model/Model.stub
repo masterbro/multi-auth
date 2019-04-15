@@ -16,7 +16,7 @@ class {{singularClass}} extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'username', 'password', 'name', 'contact',
     ];
 
     /**
@@ -27,15 +27,4 @@ class {{singularClass}} extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    /**
-     * Send the password reset notification.
-     *
-     * @param  string  $token
-     * @return void
-     */
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new {{singularClass}}ResetPassword($token));
-    }
 }
